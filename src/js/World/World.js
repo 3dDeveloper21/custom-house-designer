@@ -7,6 +7,7 @@ import { createControls } from './systems/controls.js'
 import { createRenderer } from './systems/renderer'
 import { Resizer } from './systems/Resizer'
 import { Loop } from './systems/Loop'
+import createOutline from './components/createFloor'
 
 // These variables are module-scoped: we can not access them
 // from outside the module
@@ -22,6 +23,9 @@ class World {
 
     const cube = createCube()
     const light = createLights()
+
+    const roomOutline = createOutline()
+    roomOutline()
 
     loop = new Loop(camera, scene, renderer)
 
