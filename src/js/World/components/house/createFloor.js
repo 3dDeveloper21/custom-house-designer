@@ -1,4 +1,4 @@
-const { Group, Shape, Vector2 } = require('three')
+import { Group, Shape, Vector2 } from 'three';
 
 const createOutline = () => {
   const joint = new Group()

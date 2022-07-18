@@ -35,9 +35,9 @@ function createCube() {
 
 let cubeTick = {
   tick: (delta) => {
-    box.rotation.z += radiansPerSecond * delta
-    box.rotation.x += radiansPerSecond * delta
-    box.rotation.y += radiansPerSecond * delta
+    // box.rotation.z += radiansPerSecond * delta
+    // box.rotation.x += radiansPerSecond * delta
+    // box.rotation.y += radiansPerSecond * delta
   },
 }
 

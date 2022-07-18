@@ -7,7 +7,8 @@ import { createControls } from './systems/controls.js'
 import { createRenderer } from './systems/renderer'
 import { Resizer } from './systems/Resizer'
 import { Loop } from './systems/Loop'
-import createOutline from './components/createFloor'
+// import createOutline from './components/house/createFloor'
+import house from './components/house';
 
 // These variables are module-scoped: we can not access them
 // from outside the module
@@ -21,18 +22,20 @@ class World {
 
     const controls = createControls(camera, renderer.domElement)
 
-    const cube = createCube()
     const light = createLights()
 
-    const roomOutline = createOutline()
-    roomOutline()
+    // const roomOutline = createOutline()
+    // roomOutline()
 
     loop = new Loop(camera, scene, renderer)
 
     loop.updatables.push(cubeTick)
 
     // Add childern/scene objects to the scene
-    scene.add(cube, light.ambientLight, light.mainLight)
+    scene.add(light.ambientLight, light.mainLight)
+
+    // Add house component(s)
+    house(scene);
 
     const resizer = new Resizer(camera, renderer, sizes)
   }
